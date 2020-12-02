@@ -1,0 +1,45 @@
+paths:
+  /api/users:
+    get:
+      tags:
+        - User
+      summary: Get all Nutrahome's Users
+      produces:
+      - application/json
+      description: Get all Nutrahome's Users
+      responses:
+        '200':
+          description: 'Success!'
+        '400':
+          description: 'Bad request!'
+        '401':
+          description: 'Unauthorized!'
+        '500':
+          description: 'Internal server error.'
+  /api/users/{id}:
+    get:
+      tags:
+        - User
+      summary: Get all Nutrahome's Users by id
+      produces:
+      - application/json
+      description: Get all Nutrahome's Users by id
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "User ID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        '200':
+          description: 'Success!'
+        '400':
+          description: 'Bad request!'
+        '401':
+          description: 'Unauthorized!'
+        '500':
+          description: 'Internal server error.'
+tags:
+  - name: User
+    description: Nutrahome User API

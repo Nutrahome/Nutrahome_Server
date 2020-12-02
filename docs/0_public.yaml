@@ -1,0 +1,23 @@
+paths:
+  /:
+    get:
+      tags:
+        - Public routes
+      summary: Nutrahome API Homepage
+      produces:
+      - text/html
+      description: Homepage route
+      responses:
+        '200':
+          description: 'Success.'
+        '500':
+          description: 'Internal server error.'
+tags:
+  - name: Public routes
+    description: You don't have to be authorized to access these public APIs
+securityDefinitions:
+  auth:
+    description: "Insert user authorization (`Bearer accessToken`)"
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"
