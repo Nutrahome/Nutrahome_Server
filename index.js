@@ -11,6 +11,8 @@ var public_routes = require('./routes/publicRoutes');
 var user_routes = require('./routes/userRoutes');
 var dietitian_routes = require('./routes/dietitianRoutes');
 var booth_routes = require('./routes/boothRoutes');
+var meals_routes = require('./routes/mealRoutes')
+var paymethods_routes = require('./routes/payMethodRoutes')
 
 var app = express();
 app.use(cors());
@@ -87,14 +89,42 @@ boothRoutes.use((req, res, next) => {
 boothRoutes.use(bodyParser.urlencoded({ extended: true }));
 boothRoutes.use(bodyParser.json());
 
+// meals routes
+var mealRoutes = express.Router();
+mealRoutes.use(cors());
+mealRoutes.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Authorization, X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, OPTION, DELETE");
+    next();
+});
+mealRoutes.use(bodyParser.urlencoded({ extended: true }));
+mealRoutes.use(bodyParser.json());
+
+// paymethods routes
+var paymethodRoutes = express.Router();
+paymethodRoutes.use(cors());
+paymethodRoutes.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Authorization, X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, OPTION, DELETE");
+    next();
+});
+paymethodRoutes.use(bodyParser.urlencoded({ extended: true }));
+paymethodRoutes.use(bodyParser.json());
+
 userRoutes.use(user_routes);
 dietitianRoutes.use(dietitian_routes)
 boothRoutes.use(booth_routes)
+mealRoutes.use(meals_routes)
+paymethodRoutes.use(paymethods_routes)
 app.use(public_routes);
 
 app.use('/api', userRoutes);
 app.use('/api', dietitianRoutes);
 app.use('/api', boothRoutes);
+app.use('/api', mealRoutes);
+app.use('/api', paymethodRoutes);
 
 app.use('/img', express.static('img'));
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))

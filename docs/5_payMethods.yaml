@@ -1,0 +1,72 @@
+paths:
+  /api/paymethods:
+    get:
+      tags:
+        - Payment Methods
+      summary: Get all Nutrahome's Payment Methods
+      produces:
+      - application/json
+      description: Get all Nutrahome's Payment Methods
+      responses:
+        '200':
+          description: 'Success!'
+        '400':
+          description: 'Bad request!'
+        '401':
+          description: 'Unauthorized!'
+        '500':
+          description: 'Internal server error.'
+  /api/paymethods/atm:
+    get:
+      tags:
+        - Payment Methods
+      summary: Get all Nutrahome's ATM Payment Methods
+      produces:
+      - application/json
+      description: Get all Nutrahome's ATM Payment Methods
+      responses:
+        '200':
+          description: 'Success!'
+        '400':
+          description: 'Bad request!'
+        '401':
+          description: 'Unauthorized!'
+        '500':
+          description: 'Internal server error.'
+  /api/paymethods/internet:
+    get:
+      tags:
+        - Payment Methods
+      summary: Get all Nutrahome's Internet/Mobile Payment Methods
+      produces:
+      - application/json
+      description: Get all Nutrahome's Internet/Mobile Payment Methods
+      responses:
+        '200':
+          description: 'Success!'
+        '400':
+          description: 'Bad request!'
+        '401':
+          description: 'Unauthorized!'
+        '500':
+          description: 'Internal server error.'
+  /api/paymethods/emoney:
+    get:
+      tags:
+        - Payment Methods
+      summary: Get all Nutrahome's E-Money Payment Methods
+      produces:
+      - application/json
+      description: Get all Nutrahome's E-Money Payment Methods
+      responses:
+        '200':
+          description: 'Success!'
+        '400':
+          description: 'Bad request!'
+        '401':
+          description: 'Unauthorized!'
+        '500':
+          description: 'Internal server error.'
+tags:
+  - name: Payment Methods
+    description: Nutrahome Payment Methods API

@@ -35,6 +35,21 @@ let BoothsAttr = {
     bphoto:{type: DataTypes.STRING}
 }
 
+let MealsAttr = {
+    mid:{type: DataTypes.INTEGER},
+    mname:{type: DataTypes.STRING},
+    minfo:{type: DataTypes.STRING},
+    mprice:{type: DataTypes.INTEGER},
+    mphoto:{type: DataTypes.STRING}
+}
+
+let PaymethodsAttr = {
+    pmid:{type: DataTypes.INTEGER},
+    pmname:{type: DataTypes.STRING},
+    pmtype:{type: DataTypes.STRING},
+    pmphoto:{type: DataTypes.STRING}
+}
+
 module.exports = {
-    UsersAttr, DietitiansAttr, BoothsAttr
+    UsersAttr, DietitiansAttr, BoothsAttr, MealsAttr, PaymethodsAttr
 }
